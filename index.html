@@ -13,6 +13,7 @@
       <li><a href="#section1">Home</a></li>
       <li><a href="#section2">About</a></li>
       <li><a href="#section3">Gallery</a></li>
+      <li><a href="#section5">blogs</a></li>
       <li><a href="#section4">Contact</a></li>
     </ul>
   </nav>
@@ -74,48 +75,120 @@
     </div>
   </section>
   
-  <!-- Section 3: Gallery -->
- <!-- Section 3: Gallery -->
+<!-- Section 3: Gallery -->
 <section id="section3" class="gallery-section">
   <div class="gallery-container">
     <h2 class="gallery-title">Gallery</h2>
     <div class="gallery-grid">
       <div class="gallery-item">
-        <img src="gallery-image1.jpg" alt="Gallery Image 1" class="gallery-img">
+        <img src="images/history.jpeg" alt="How the mind works" class="gallery-img">
+        <p class="gallery-caption">How the Mind Works</p>
       </div>
       <div class="gallery-item">
-        <img src="gallery-image2.jpg" alt="Gallery Image 2" class="gallery-img">
+        <img src="images/humanbody.jpeg" alt="Living Things" class="gallery-img">
+        <p class="gallery-caption">Living Things</p>
       </div>
       <div class="gallery-item">
-        <img src="gallery-image3.jpg" alt="Gallery Image 3" class="gallery-img">
+        <img src="images/howthingswork.jpeg" alt="Practical Practices" class="gallery-img">
+        <p class="gallery-caption">Practical Practices</p>
       </div>
       <div class="gallery-item">
-        <img src="gallery-image4.jpg" alt="Gallery Image 4" class="gallery-img">
+        <img src="Images/mind.jpg" alt="Leadership" class="gallery-img">
+        <p class="gallery-caption">Leadership</p>
       </div>
       <div class="gallery-item">
-        <img src="gallery-image5.jpg" alt="Gallery Image 5" class="gallery-img">
+        <img src="images/solar.jpeg" alt="Beliefs" class="gallery-img">
+        <p class="gallery-caption">Beliefs</p>
       </div>
       <div class="gallery-item">
-        <img src="gallery-image6.jpg" alt="Gallery Image 6" class="gallery-img">
+        <img src="images/daffodil.jpeg" alt="Languages" class="gallery-img">
+        <p class="gallery-caption">Languages</p>
+      </div>
+      <div class="gallery-item">
+        <img src="images/myguy.jpeg" alt="Food" class="gallery-img">
+        <p class="gallery-caption">Food</p>
       </div>
     </div>
   </div>
 </section>
+<!-- Section 5: Blog Page -->
+<section id="section5" class="blog-section">
+  <div class="blog-container">
+    <h2 class="blog-title">Library Blog</h2>
 
-
-  <!-- Section 4: Contact -->
-  <section id="section4">
-    <div class="content">
-      <h2>Contact Us</h2>
-      <p>Reach out to us for inquiries or to schedule a visit to our mysterious archive.</p>
-      <form>
-        <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea placeholder="Your Message"></textarea>
-        <button type="submit">Submit</button>
-      </form>
+    <div class="blog-post">
+      <div class="blog-image">
+        <img src="images/blog1.jpg" alt="Blog Post Image" class="blog-img">
+      </div>
+      <div class="blog-content">
+        <h3 class="blog-heading">The Evolution of Library Work</h3>
+        <p class="blog-text">The library has served as a pillar of knowledge and information across generations. In this post, we explore how libraries have evolved from physical repositories of books to digital hubs of knowledge. We also look into the modern librarian’s role in this transformation, where they now act as both guardians of knowledge and digital curators. Let's dive deeper into this fascinating transformation.</p>
+        <audio controls class="blog-audio">
+          <source src="audio/library-evolution.mp3" type="audio/mp3">
+          Your browser does not support the audio element.
+        </audio>
+        <a href="#" class="read-more-btn">Read More</a>
+      </div>
     </div>
-  </section>
+
+    <div class="blog-post">
+      <div class="blog-image">
+        <img src="images/blog2.jpeg" alt="Blog Post Image 2" class="blog-img">
+      </div>
+      <div class="blog-content">
+        <h3 class="blog-heading">How Knowledge Shapes Society</h3>
+        <p class="blog-text">Knowledge has always been the foundation of societal progress. In this article, we explore how the accessibility of information through libraries has helped shape modern civilizations. The journey through time reveals that libraries were once exclusive to the elite, but today they serve all levels of society, democratizing access to knowledge.</p>
+        <audio controls class="blog-audio">
+          <source src="audio/knowledge-society.mp3" type="audio/mp3">
+          Your browser does not support the audio element.
+        </audio>
+        <a href="#" class="read-more-btn">Read More</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+ <!-- Section 4: Contact Us -->
+<section id="section4" class="contact-section">
+  <div class="contact-container">
+    <h2 class="contact-title">Contact Us</h2>
+    
+    <div class="contact-info">
+      <div class="contact-details">
+        <h3>Get in Touch</h3>
+        <p><strong>Address:</strong> 123 Gothic Street, Midnight City, Darkland</p>
+        <p><strong>Email:</strong> info@raboklibrary.com</p>
+        <p><strong>Phone:</strong> +123 456 7890</p>
+      </div>
+      
+      <div class="contact-form">
+        <h3>Send Us a Message</h3>
+        <form action="#" method="POST">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+          
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+          
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+          
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+    
+
+    <div class="contact-socials">
+      <h3>Follow Us</h3>
+      <a href="#" class="social-link">Twitter</a>
+      <a href="#" class="social-link">Instagram</a>
+      <a href="#" class="social-link">Facebook</a>
+    </div>
+  </div>
+
 
   <script src="script.js"></script>
 </body>
