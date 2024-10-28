@@ -113,42 +113,47 @@
   </div>
 </section>
 <!-- Section 5: Blog Page -->
+<!-- Section 5: Blog Page -->
 <section id="section5" class="blog-section">
   <div class="blog-container">
-    <h2 class="blog-title">Library Blog</h2>
+      <h2 class="blog-title">Library Blog</h2>
 
-    <div class="blog-post">
-      <div class="blog-image">
-        <img src="images/blog1.jpg" alt="Blog Post Image" class="blog-img">
+      <div class="blog-post">
+          <div class="blog-image">
+              <img src="images/blog1.jpg" alt="Blog Post Image" class="blog-img">
+          </div>
+          <div class="blog-content">
+              <h3 class="blog-heading">The Evolution of Library Work</h3>
+              <p class="blog-text">The library has served as a pillar of knowledge and information across generations. In this post, we explore how libraries have evolved from physical repositories of books to digital hubs of knowledge. We also look into the modern librarian’s role in this transformation, where they now act as both guardians of knowledge and digital curators. Let's dive deeper into this fascinating transformation.</p>
+              <audio controls class="blog-audio">
+                  <source src="audio/library-evolution.mp3" type="audio/mp3">
+                  Your browser does not support the audio element.
+              </audio>
+              <a href="#" class="read-more-btn" onclick="handleReadMore('The Evolution of Library Work')">Read More</a>
+          </div>
       </div>
-      <div class="blog-content">
-        <h3 class="blog-heading">The Evolution of Library Work</h3>
-        <p class="blog-text">The library has served as a pillar of knowledge and information across generations. In this post, we explore how libraries have evolved from physical repositories of books to digital hubs of knowledge. We also look into the modern librarian’s role in this transformation, where they now act as both guardians of knowledge and digital curators. Let's dive deeper into this fascinating transformation.</p>
-        <audio controls class="blog-audio">
-          <source src="audio/library-evolution.mp3" type="audio/mp3">
-          Your browser does not support the audio element.
-        </audio>
-        <a href="#" class="read-more-btn">Read More</a>
-      </div>
-    </div>
 
-    <div class="blog-post">
-      <div class="blog-image">
-        <img src="images/blog2.jpeg" alt="Blog Post Image 2" class="blog-img">
+      <div class="blog-post">
+          <div class="blog-image">
+              <img src="images/blog2.jpeg" alt="Blog Post Image 2" class="blog-img">
+          </div>
+          <div class="blog-content">
+              <h3 class="blog-heading">How Knowledge Shapes Society</h3>
+              <p class="blog-text">Knowledge has always been the foundation of societal progress. In this article, we explore how the accessibility of information through libraries has helped shape modern civilizations. The journey through time reveals that libraries were once exclusive to the elite, but today they serve all levels of society, democratizing access to knowledge.</p>
+              <audio controls class="blog-audio">
+                  <source src="audio/knowledge-society.mp3" type="audio/mp3">
+                  Your browser does not support the audio element.
+              </audio>
+              <a href="#" class="read-more-btn" onclick="handleReadMore('How Knowledge Shapes Society')">Read More</a>
+          </div>
       </div>
-      <div class="blog-content">
-        <h3 class="blog-heading">How Knowledge Shapes Society</h3>
-        <p class="blog-text">Knowledge has always been the foundation of societal progress. In this article, we explore how the accessibility of information through libraries has helped shape modern civilizations. The journey through time reveals that libraries were once exclusive to the elite, but today they serve all levels of society, democratizing access to knowledge.</p>
-        <audio controls class="blog-audio">
-          <source src="audio/knowledge-society.mp3" type="audio/mp3">
-          Your browser does not support the audio element.
-        </audio>
-        <a href="#" class="read-more-btn">Read More</a>
-      </div>
-    </div>
 
+      <!-- Load More Button will be appended here -->
   </div>
 </section>
+
+<!-- Load Spinner -->
+<div id="loadingSpinner" class="loading-spinner" style="display: none;">Loading...</div>
 
 
  <!-- Section 4: Contact Us -->
