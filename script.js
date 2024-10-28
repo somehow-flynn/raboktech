@@ -11,49 +11,41 @@ async function loadMorePosts() {
     const loadingSpinner = document.getElementById('loadingSpinner');
     loadingSpinner.style.display = 'block'; // Show loading spinner
 
-    // Simulate fetching new posts
-    await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate network delay
+    try {
+        // Fetch blog posts from the backend
+        const response = await fetch('http://localhost:3000/api/blogs');
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const posts = await response.json(); // Parse the JSON response
 
-    // Sample new blog posts data
-    const newPosts = [
-        {
-            title: "The Future of Libraries",
-            image: "images/blog3.jpg",
-            text: "As technology advances, libraries continue to adapt. This post discusses future trends in libraries, including virtual reality and AI.",
-            audio: "audio/future-libraries.mp3",
-        },
-        {
-            title: "The Role of Libraries in Education",
-            image: "images/blog4.jpg",
-            text: "Libraries play a crucial role in supporting education at all levels. In this article, we explore their impact on learning.",
-            audio: "audio/libraries-education.mp3",
-        },
-    ];
+        // Append each post to the blog container
+        posts.forEach(post => {
+            const blogPost = document.createElement('div');
+            blogPost.classList.add('blog-post');
 
-    // Append each new post to the blog container
-    newPosts.forEach(post => {
-        const blogPost = document.createElement('div');
-        blogPost.classList.add('blog-post');
+            blogPost.innerHTML = `
+                <div class="blog-image">
+                    <img src="${post.image || 'default-image.jpg'}" alt="${post.title}" class="blog-img"> <!-- Fallback image -->
+                </div>
+                <div class="blog-content">
+                    <h3 class="blog-heading">${post.title}</h3>
+                    <p class="blog-text">${post.content}</p>
+                    ${post.audio ? `<audio controls class="blog-audio">
+                        <source src="${post.audio}" type="audio/mp3">
+                        Your browser does not support the audio element.
+                    </audio>` : ''}
+                    <a href="#" class="read-more-btn" onclick="handleReadMore('${post.title}')">Read More</a>
+                </div>
+            `;
 
-        blogPost.innerHTML = `
-            <div class="blog-image">
-                <img src="${post.image}" alt="${post.title}" class="blog-img">
-            </div>
-            <div class="blog-content">
-                <h3 class="blog-heading">${post.title}</h3>
-                <p class="blog-text">${post.text}</p>
-                <audio controls class="blog-audio">
-                    <source src="${post.audio}" type="audio/mp3">
-                    Your browser does not support the audio element.
-                </audio>
-                <a href="#" class="read-more-btn" onclick="handleReadMore('${post.title}')">Read More</a>
-            </div>
-        `;
-
-        blogContainer.appendChild(blogPost);
-    });
-
-    loadingSpinner.style.display = 'none'; // Hide loading spinner
+            blogContainer.appendChild(blogPost);
+        });
+    } catch (error) {
+        console.error('Error loading blog posts:', error);
+    } finally {
+        loadingSpinner.style.display = 'none'; // Hide loading spinner
+    }
 }
 
 // Add an event listener for DOMContentLoaded
@@ -65,4 +57,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Append the Load More button at the end of the blog container
     document.querySelector('.blog-container').appendChild(loadMoreButton);
+
+    // Optionally load initial posts on page load
+    loadMorePosts(); // Load initial blog posts
 });
