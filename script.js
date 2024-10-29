@@ -1,8 +1,9 @@
 // Function to handle the Read More button click
 function handleReadMore(postTitle) {
-    alert(`Navigating to the full post: ${postTitle}`);
-    // Here, redirect to the actual blog post page, e.g.,
-    // window.location.href = `blog/${postTitle.toLowerCase().replace(/\s+/g, '-')}.html`;
+    // Format the title for the URL by converting to lowercase and replacing spaces with hyphens
+    const formattedTitle = postTitle.toLowerCase().replace(/\s+/g, '-');
+    // Redirect to the corresponding blog post page in the "blog" folder
+    window.location.href = `blog/${formattedTitle}.html`;
 }
 
 // Function to load more blog posts dynamically
@@ -10,6 +11,12 @@ async function loadMorePosts() {
     const blogContainer = document.querySelector('.blog-container');
     const loadingSpinner = document.getElementById('loadingSpinner');
     loadingSpinner.style.display = 'block'; // Show loading spinner
+
+    // Clear previous error messages
+    const errorMessage = document.getElementById('errorMessage');
+    if (errorMessage) {
+        errorMessage.remove();
+    }
 
     try {
         // Fetch blog posts from the backend
@@ -43,6 +50,11 @@ async function loadMorePosts() {
         });
     } catch (error) {
         console.error('Error loading blog posts:', error);
+        const errorDiv = document.createElement('div');
+        errorDiv.id = 'errorMessage';
+        errorDiv.innerText = 'Unable to load blog posts. Please try again later.';
+        errorDiv.style.color = 'red'; // Style the error message
+        blogContainer.appendChild(errorDiv);
     } finally {
         loadingSpinner.style.display = 'none'; // Hide loading spinner
     }
