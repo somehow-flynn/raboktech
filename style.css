@@ -650,3 +650,234 @@
     margin-top: 15px;
   }
 }
+
+
+/* Global adjustments for mobile */
+@media (max-width: 768px) {
+  /* Adjust body padding and general spacing */
+  body {
+    padding: 10px;
+  }
+
+  /* Section Titles */
+  h2, h3, h1 {
+    font-size: 24px;
+  }
+
+  /* General Text */
+  p, li, a {
+    font-size: 16px;
+  }
+
+  /* Navbar */
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-menu {
+    display: block;
+    text-align: center;
+  }
+
+  .nav-item {
+    margin: 10px 0;
+  }
+
+  /* Home Section Adjustments */
+  .home-section h1 {
+    font-size: 36px;
+  }
+
+  .home-subtext {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  /* Adjust hero image */
+  .hero-image {
+    height: 60vh;
+    background-size: cover;
+  }
+
+  /* About Section Adjustments */
+  .about-section {
+    padding: 40px 10px;
+  }
+
+  .about-content {
+    text-align: center;
+  }
+
+  .about-text {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .about-images {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .about-img {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .sign-up-btn {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  /* Gallery Section Adjustments */
+  .gallery-section {
+    padding: 40px 10px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr 1fr; /* Two columns for smaller screens */
+    grid-gap: 15px;
+  }
+
+  .gallery-img {
+    width: 100%;
+  }
+
+  /* Blog Section Adjustments */
+  .blog-section {
+    padding: 40px 10px;
+  }
+
+  .blog-post {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .blog-image {
+    max-width: 100%;
+    margin: 0 0 15px 0;
+  }
+
+  .blog-content {
+    text-align: center;
+  }
+
+  /* Contact Section Adjustments */
+  .contact-section {
+    padding: 40px 10px;
+  }
+
+  .contact-form {
+    width: 100%;
+  }
+
+  .form-input {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .form-textarea {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .submit-btn {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Smaller mobile adjustments for compact screens */
+  h1, h2 {
+    font-size: 22px;
+  }
+
+  .nav-item a {
+    font-size: 18px;
+  }
+
+  .about-text {
+    font-size: 14px;
+  }
+
+  .blog-heading {
+    font-size: 20px;
+  }
+
+  .read-more-btn {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+}
+
+/* Global styles to keep the gothic feel intact across all devices */
+body {
+  background-color: #1a1a1a;
+  color: #d4af37;
+  font-family: 'Cantbury', serif;
+  line-height: 1.8;
+}
+
+h1, h2, h3 {
+  color: #d4af37;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+a {
+  color: #d4af37;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #f0c974;
+}
+
+button {
+  background-color: #d4af37;
+  color: #1a1a1a;
+  font-family: 'Cantbury', serif;
+  padding: 12px 25px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #f0c974;
+}
+
+img {
+  border: 2px solid #d4af37;
+  border-radius: 8px;
+}
+
+/* Keep grid layouts responsive */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.blog-post {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.about-section,
+.contact-section,
+.gallery-section,
+.blog-section {
+  padding: 80px 40px;
+}
+
+.about-images,
+.contact-form,
+.blog-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
