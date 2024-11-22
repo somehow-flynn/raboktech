@@ -1,92 +1,67 @@
-// Your Blogger API Key and Blog ID
-const API_KEY = 'YOUR_API_KEY_HERE';
-const BLOG_ID = 'YOUR_BLOG_ID_HERE';
+// Function to dynamically populate the "About Me" section
+function populateAboutMe() {
+    const aboutMeContainer = document.querySelector('#aboutMeContent');
 
-// Function to fetch posts from Blogger
-async function fetchBloggerPosts() {
-    const blogContainer = document.querySelector('#blogPosts');
-    const loadingSpinner = document.createElement('div');
-    loadingSpinner.className = 'loading-spinner';
-    loadingSpinner.innerText = 'Loading...';
-    blogContainer.appendChild(loadingSpinner);
+    // Your details
+    const aboutMeData = {
+        name: "Your Name",
+        title: "Visionary and Founder of Rabok Library",
+        description: `
+            Welcome to Rabok Library! My name is [Your Name], and I am passionate about creating spaces 
+            where knowledge thrives and people come together to learn and grow. 
+            <br><br>
+            My vision for Rabok Library is to bridge the gap between tradition and innovation, offering not only 
+            books but also ideas, connections, and a supportive community for dreamers, doers, and thinkers alike. 
+            I hope this library serves as a cornerstone for your personal and professional growth.
+        `,
+        image: "images/about-me.jpg", // Replace with your image
+        fallbackImage: "images/default-profile.jpg" // Fallback if image is unavailable
+    };
 
-    try {
-        const response = await fetch(
-            `https://www.googleapis.com/blogger/v3/blogs/${BLOG_ID}/posts?key=${API_KEY}`
-        );
-        if (!response.ok) {
-            throw new Error('Failed to fetch blog posts');
+    // Construct the HTML
+    const aboutMeHTML = `
+        <div class="row align-items-center animated-section">
+            <div class="col-md-6">
+                <img 
+                    src="${aboutMeData.image}" 
+                    alt="${aboutMeData.name}" 
+                    class="img-fluid rounded shadow"
+                    onerror="this.onerror=null; this.src='${aboutMeData.fallbackImage}';"
+                >
+            </div>
+            <div class="col-md-6">
+                <h2 class="text-warning">${aboutMeData.name}</h2>
+                <h4 class="text-light">${aboutMeData.title}</h4>
+                <p>${aboutMeData.description}</p>
+            </div>
+        </div>
+    `;
+
+    // Populate the container
+    aboutMeContainer.innerHTML = aboutMeHTML;
+
+    // Trigger animation when the section is in the viewport
+    revealOnScroll();
+}
+
+// Function to reveal animations when in viewport
+function revealOnScroll() {
+    const animatedSections = document.querySelectorAll('.animated-section');
+    const windowHeight = window.innerHeight;
+
+    animatedSections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+
+        if (sectionTop < windowHeight - 50) {
+            section.classList.add('visible');
         }
-
-        const data = await response.json();
-        const posts = data.items;
-
-        // Append posts to the blog container
-        posts.forEach(post => {
-            const blogPost = document.createElement('div');
-            blogPost.className = 'blog-post';
-
-            blogPost.innerHTML = `
-                <div class="blog-image">
-                    <img src="${extractImage(post.content)}" alt="${post.title}" class="blog-img" loading="lazy">
-                </div>
-                <div class="blog-content">
-                    <h3>${post.title}</h3>
-                    <p>${truncateText(stripHTML(post.content), 100)}</p>
-                    <a href="${post.url}" class="read-more-btn" target="_blank">Read More</a>
-                </div>
-            `;
-
-            blogContainer.appendChild(blogPost);
-        });
-    } catch (error) {
-        console.error('Error loading blog posts:', error);
-        const errorMessage = document.createElement('div');
-        errorMessage.className = 'error-message';
-        errorMessage.innerText = 'Unable to load blog posts. Please try again later.';
-        blogContainer.appendChild(errorMessage);
-    } finally {
-        loadingSpinner.remove();
-    }
+    });
 }
 
-// Helper function to extract the first image from post content
-function extractImage(content) {
-    const imgMatch = content.match(/<img[^>]+src="([^">]+)"/);
-    return imgMatch ? imgMatch[1] : 'images/default-image.jpg';
-}
-
-// Helper function to strip HTML tags
-function stripHTML(html) {
-    const div = document.createElement('div');
-    div.innerHTML = html;
-    return div.textContent || div.innerText || '';
-}
-
-// Helper function to truncate text
-function truncateText(text, maxLength) {
-    return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
-}
-
-// Load posts when the page is ready
-document.addEventListener('DOMContentLoaded', fetchBloggerPosts);
-
-// Hamburger Menu Toggle
+// Add event listeners
 document.addEventListener('DOMContentLoaded', () => {
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
+    populateAboutMe();
 
-    hamburger.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        hamburger.classList.toggle('active');
-    });
-
-    // Auto-close menu on link click
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            hamburger.classList.remove('active');
-        });
-    });
+    // Add scroll listener for animations
+    window.addEventListener('scroll', revealOnScroll);
 });
