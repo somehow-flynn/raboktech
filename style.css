@@ -222,3 +222,21 @@ section {
     padding: 8px 15px;
   }
 }
+/* Animation styles */
+.animated-section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease-out;
+}
+
+.animated-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Utility styles for images */
+img {
+  max-width: 100%;
+  border: 2px solid #d4af37;
+  border-radius: 10px;
+}
