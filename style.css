@@ -1,8 +1,8 @@
 /* Import the Cantbury Regular font */
 @font-face {
   font-family: 'Cantbury';
-  src: url('assets/fonts/canterbury/Canterbury.ttf') format('woff2'),
-       url('assets/fonts/canterbury/Canterbury.ttf') format('woff');
+  src: url('assets/fonts/library-records-font/LibraryRecordsRegular-qZW66.ttf') format('woff2'),
+       url('assets/fonts/library-records-font/LibraryRecordsRegular-qZW66.ttf') format('woff');
   font-weight: normal;
   font-style: normal;
 }

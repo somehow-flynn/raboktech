@@ -5,7 +5,6 @@ const BLOG_ID = 'YOUR_BLOG_ID_HERE';
 // Function to fetch posts from Blogger
 async function fetchBloggerPosts() {
     const blogContainer = document.querySelector('#blogPosts');
-    const loadMoreButton = document.getElementById('loadMoreButton');
     const loadingSpinner = document.createElement('div');
     loadingSpinner.className = 'loading-spinner';
     loadingSpinner.innerText = 'Loading...';
@@ -29,7 +28,7 @@ async function fetchBloggerPosts() {
 
             blogPost.innerHTML = `
                 <div class="blog-image">
-                    <img src="${extractImage(post.content)}" alt="${post.title}" class="blog-img">
+                    <img src="${extractImage(post.content)}" alt="${post.title}" class="blog-img" loading="lazy">
                 </div>
                 <div class="blog-content">
                     <h3>${post.title}</h3>
@@ -72,7 +71,6 @@ function truncateText(text, maxLength) {
 // Load posts when the page is ready
 document.addEventListener('DOMContentLoaded', fetchBloggerPosts);
 
-
 // Hamburger Menu Toggle
 document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.querySelector('.hamburger');
@@ -81,5 +79,14 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburger.addEventListener('click', () => {
         navMenu.classList.toggle('active');
         hamburger.classList.toggle('active');
+    });
+
+    // Auto-close menu on link click
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            hamburger.classList.remove('active');
+        });
     });
 });
