@@ -13,7 +13,7 @@ body {
   padding: 0;
   font-family: 'Cantbury', serif;
   background-color: #2a2a2a;
-  color: #f0e6d2;
+  color: #000000;
   scroll-behavior: smooth;
 }
 
@@ -71,13 +71,13 @@ section {
 /* About Section */
 .about-title {
   font-size: 2.5rem;
-  color: #d4af37;
+  color: #000000;
 }
 
 .about-description {
   font-size: 1.2rem;
   line-height: 1.8;
-  color: #f0e6d2;
+  color: #c59027;
 }
 
 .about-img {
@@ -111,7 +111,7 @@ section {
 
 /* Blogs Section */
 .blog-post {
-  background: #2c2c2c;
+  background: black;
   border: 2px solid #d4af37;
   border-radius: 8px;
   padding: 20px;

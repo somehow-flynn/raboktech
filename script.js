@@ -33,9 +33,9 @@ async function fetchBloggerPosts() {
     } catch (error) {
         console.error('Error loading blog posts:', error);
 
-        // Clear loading spinner and show the default post
+        // Clear loading spinner and show the default posts
         blogContainer.innerHTML = '';
-        appendDefaultPost();
+        appendDefaultPosts();
     }
 }
 
@@ -59,14 +59,38 @@ function appendBlogPost(title, image, content, url) {
     blogContainer.appendChild(blogPost);
 }
 
-// Function to append the default blog post
-function appendDefaultPost() {
-    appendBlogPost(
-        'The Strange Case of Dr. Jekyll and Mr. Hyde',
-        'images/jekyll-hyde.jpg', // Default image
-        'A thrilling tale of duality and the human psyche. Explore the dark secrets of Dr. Jekyll and his sinister counterpart, Mr. Hyde.',
-        'https://en.wikipedia.org/wiki/Strange_Case_of_Dr_Jekyll_and_Mr_Hyde' // Link to more info
-    );
+// Function to append default blog posts
+function appendDefaultPosts() {
+    const defaultPosts = [
+        {
+            title: 'The Strange Case of Dr. Jekyll and Mr. Hyde',
+            image: 'images/hi.jpg',
+            content: 'A thrilling tale of duality and the human psyche. Explore the dark secrets of Dr. Jekyll and his sinister counterpart, Mr. Hyde.',
+            url: 'https://en.wikipedia.org/wiki/Strange_Case_of_Dr_Jekyll_and_Mr_Hyde'
+        },
+        {
+            title: 'Understanding Human Nature',
+            image: 'images/hi2.jpg',
+            content: 'Delve into the complexities of human behavior and the philosophical underpinnings of our decisions.',
+            url: 'https://example.com/understanding-human-nature'
+        },
+        {
+            title: 'The Psychology of Fear',
+            image: 'images/hi3.jpg',
+            content: 'An insightful analysis into why fear controls us and how to harness it for personal growth.',
+            url: 'https://example.com/psychology-of-fear'
+        },
+        {
+            title: 'The Art of Storytelling',
+            image: 'images/h14.jpg',
+            content: 'Explore how narratives shape culture, connect us, and help us make sense of the world.',
+            url: 'https://example.com/art-of-storytelling'
+        }
+    ];
+
+    defaultPosts.forEach(post => {
+        appendBlogPost(post.title, post.image, post.content, post.url);
+    });
 }
 
 // Helper functions
@@ -81,27 +105,6 @@ function stripHTML(html) {
     return div.textContent || div.innerText || '';
 }
 
-function truncateText(text, maxLength) {
-    return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
-}
-
-// Load posts when the page is ready
-document.addEventListener('DOMContentLoaded', fetchBloggerPosts);
-
-// Helper function to extract the first image from post content
-function extractImage(content) {
-    const imgMatch = content.match(/<img[^>]+src="([^">]+)"/);
-    return imgMatch ? imgMatch[1] : 'images/default-image.jpg';
-}
-
-// Helper function to strip HTML tags
-function stripHTML(html) {
-    const div = document.createElement('div');
-    div.innerHTML = html;
-    return div.textContent || div.innerText || '';
-}
-
-// Helper function to truncate text
 function truncateText(text, maxLength) {
     return text.length > maxLength ? text.substring(0, maxLength) + '...' : text;
 }
