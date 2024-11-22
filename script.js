@@ -71,3 +71,15 @@ function truncateText(text, maxLength) {
 
 // Load posts when the page is ready
 document.addEventListener('DOMContentLoaded', fetchBloggerPosts);
+
+
+// Hamburger Menu Toggle
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        hamburger.classList.toggle('active');
+    });
+});
