@@ -13,7 +13,7 @@ body {
   padding: 0;
   font-family: 'Cantbury', serif;
   background-color: #2a2a2a;
-  color: #000000;
+  color: #ffffff;
   scroll-behavior: smooth;
 }
 
@@ -24,7 +24,7 @@ h1, h2, h3 {
 
 /* Navbar */
 .navbar {
-  background-color: rgba(0, 0, 0, 0.8) !important;
+  background-color: rgba(0, 0, 0, 0.9) !important;
   padding: 10px 20px !important;
   border-bottom: 2px solid #d4af37;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
@@ -54,7 +54,7 @@ section {
   text-align: center;
 }
 
-#section1 {
+#home {
   background: url('images/library.png') center/cover no-repeat;
   display: flex;
   justify-content: center;
@@ -62,181 +62,91 @@ section {
   color: #f0e6d2;
 }
 
-#section1 .content {
-  background: rgba(0, 0, 0, 0.6);
-  padding: 20px;
-  border-radius: 8px;
-}
-
-/* About Section */
-.about-title {
-  font-size: 2.5rem;
-  color: #000000;
-}
-
-.about-description {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  color: #c59027;
-}
-
-.about-img {
-  border-radius: 10px;
-  border: 2px solid #d4af37;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.986);
-}
-
-/* Gallery Section */
-.card {
-  background-color: gold;
-  border: none;
+#about {
+  background-color: #1a1a1a;
   color: #f0e6d2;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
-.card-img-top {
+#about img {
   border-radius: 10px;
-  transition: transform 0.3s;
-}
-
-.card-img-top:hover {
-  transform: scale(1.05);
-}
-
-.card-text {
-  font-size: 1rem;
-  color: #d4af37;
-  margin-top: 10px;
-}
-
-/* Blogs Section */
-.blog-post {
-  background: black;
   border: 2px solid #d4af37;
-  border-radius: 8px;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.9);
 }
 
-.blog-img {
-  border-radius: 8px;
-  width: 100%;
+/* Storytelling Section */
+#storytelling {
+  background-color: #1a1a1a;
+  color: #f0e6d2;
 }
 
-.blog-content {
-  text-align: left;
-  margin-top: 10px;
+iframe {
+  border: 2px solid #d4af37;
+  border-radius: 10px;
 }
 
-.read-more-btn {
-  background-color: #d4af37;
-  color: #1a1a1a;
-  text-decoration: none;
-  border-radius: 5px;
-  font-size: 1rem;
-  padding: 10px 20px;
-  font-family: 'Cantbury', serif;
-  transition: background-color 0.3s;
+/* Services Section */
+#services img {
+  border-radius: 10px;
+  border: 2px solid #d4af37;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
 }
 
-.read-more-btn:hover {
-  background-color: #f0c974;
+h4 {
+  color: #d4af37;
 }
 
 /* Contact Form */
-.contact-form input, 
-.contact-form textarea {
+form input, form textarea {
   background-color: #333;
   color: #f0e6d2;
   border: 1px solid #d4af37;
   border-radius: 5px;
+  font-size: 16px;
 }
 
-.contact-form button {
+form button {
   background-color: #d4af37;
   color: #1a1a1a;
   border-radius: 5px;
-  font-size: 1rem;
+  font-size: 16px;
   padding: 10px 20px;
   font-family: 'Cantbury', serif;
 }
 
-.contact-form button:hover {
+form button:hover {
   background-color: #f0c974;
 }
 
-/* Utility Classes */
-.error-message {
-  color: red;
-  text-align: center;
-  font-size: 1rem;
-  margin: 20px 0;
-}
-
-.loading-spinner {
-  text-align: center;
+/* Footer */
+footer {
+  background-color: #000;
   color: #d4af37;
-  font-size: 1rem;
-  margin: 20px 0;
+  text-align: center;
+  padding: 20px 0;
 }
 
-/* Smooth fade-in effect for animations */
-.animated-section {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 1s ease-out;
+footer a {
+  color: #f0e6d2;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s;
 }
 
-.animated-section.visible {
-  opacity: 1;
-  transform: translateY(0);
+footer a:hover {
+  color: #d4af37;
 }
 
-/* Responsive Adjustments */
+/* Responsive Design */
 @media (max-width: 768px) {
-  .about-title {
-    font-size: 2rem;
+  h1, h2, h3 {
+    font-size: 1.5rem;
   }
 
-  .about-description {
-    font-size: 1rem;
+  .nav-link {
+    font-size: 16px;
   }
 
-  .card-text {
-    font-size: 0.9rem;
+  section {
+    padding: 60px 10px;
   }
-
-  .read-more-btn {
-    font-size: 0.9rem;
-    padding: 8px 15px;
-  }
-
-  .contact-form input, 
-  .contact-form textarea {
-    font-size: 0.9rem;
-  }
-
-  .contact-form button {
-    font-size: 0.9rem;
-    padding: 8px 15px;
-  }
-}
-/* Animation styles */
-.animated-section {
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 1s ease-out;
-}
-
-.animated-section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Utility styles for images */
-img {
-  max-width: 100%;
-  border: 2px solid #d4af37;
-  border-radius: 10px;
 }
