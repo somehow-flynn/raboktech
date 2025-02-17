@@ -49,9 +49,12 @@ h1, h2, h3 {
 
 /* Sections */
 section {
-  padding: 80px 20px;
+  padding: 100px 20px;
   min-height: 100vh;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #home {
@@ -62,33 +65,43 @@ section {
   color: #f0e6d2;
 }
 
-#about {
+#about, #storytelling, #services, #shop {
   background-color: #1a1a1a;
   color: #f0e6d2;
 }
 
-#about img {
+#about img, #services img {
   border-radius: 10px;
   border: 2px solid #d4af37;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.9);
 }
 
 /* Storytelling Section */
-#storytelling {
-  background-color: #1a1a1a;
-  color: #f0e6d2;
+#storytelling .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 iframe {
   border: 2px solid #d4af37;
   border-radius: 10px;
+  width: 100%;
+  max-width: 560px;
+  height: 315px;
+  margin: auto;
 }
 
 /* Services Section */
-#services img {
-  border-radius: 10px;
-  border: 2px solid #d4af37;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+#services .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  max-width: 300px;
+  margin: auto;
 }
 
 h4 {
@@ -96,12 +109,19 @@ h4 {
 }
 
 /* Contact Form */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 form input, form textarea {
   background-color: #333;
   color: #f0e6d2;
   border: 1px solid #d4af37;
   border-radius: 5px;
   font-size: 16px;
+  width: 80%;
 }
 
 form button {
@@ -111,6 +131,7 @@ form button {
   font-size: 16px;
   padding: 10px 20px;
   font-family: 'Cantbury', serif;
+  margin-top: 10px;
 }
 
 form button:hover {
@@ -147,6 +168,68 @@ footer a:hover {
   }
 
   section {
-    padding: 60px 10px;
+    padding: 80px 10px;
   }
+
+  iframe {
+    height: 250px;
+  }
+
+  form input, form textarea {
+    width: 100%;
+  }
+}
+/* Blog Section */
+#blog .card {
+  background-color: #1a1a1a;
+  color: #f0e6d2;
+  border: 2px solid #d4af37;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+#blog .card-img-top {
+  border-radius: 10px 10px 0 0;
+}
+
+#blog .card-title {
+  color: #d4af37;
+}
+
+#blog .btn-primary {
+  background-color: #d4af37;
+  border: none;
+  color: #1a1a1a;
+}
+
+#blog .btn-primary:hover {
+  background-color: #f0c974;
+}
+/* Blog Post Page Styles */
+#blog-post img {
+  border-radius: 10px;
+  border: 2px solid #d4af37;
+  margin-bottom: 20px;
+}
+
+#blog-post h2 {
+  color: #d4af37;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  margin-bottom: 20px;
+}
+
+#blog-post p {
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+#blog-post .btn-primary {
+  background-color: #d4af37;
+  border: none;
+  color: #1a1a1a;
+}
+
+#blog-post .btn-primary:hover {
+  background-color: #f0c974;
 }

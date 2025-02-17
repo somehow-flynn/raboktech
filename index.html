@@ -4,136 +4,112 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rabok Library</title>
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Navigation Bar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
       <a class="navbar-brand" href="#home">Rabok Library</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#storytelling">Storytelling Campaign</a></li>
-          <li class="nav-item"><a class="nav-link" href="#services">Proffesional Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#storytelling">Storytelling Campaign</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#services">Professional Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#shop">Buy Reports</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
         </ul>
       </div>
     </div>
   </nav>
-
-  <!-- Home Section -->
+  
   <section id="home" class="vh-100 d-flex align-items-center bg-dark text-light text-center">
     <div class="container">
       <h1 class="display-4">Rabok Library</h1>
       <p class="lead">Transforming Perspectives, Inspiring Action</p>
-      <div>
+      <div class="d-flex justify-content-center">
         <a href="#storytelling" class="btn btn-primary m-2">Watch Our Stories</a>
-        <a href="#services" class="btn btn-secondary m-2">Explore Our Services</a>
+        <a href="#shop" class="btn btn-success m-2">Buy Reports</a>
+        <a href="#contact" class="btn btn-secondary m-2">Work With Us</a>
       </div>
     </div>
   </section>
-
-  <!-- About Section -->
-  <section id="about" class="py-5 bg-light">
+  
+  <section id="storytelling" class="py-5 bg-dark text-light text-center">
     <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-6">
-          <h2>About Us</h2>
-          <p>
-            Rabok's Library is where ideas come alive. Our dual mission focuses on storytelling and empowering businesses through marketing services. Whether you're seeking inspiration from books or growth for your business, we have you covered.
-          </p>
-        </div>
-        <div class="col-md-6">
-          <img src="images/about us.jpg" alt="About Us" class="img-fluid rounded shadow">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Storytelling Campaign Section -->
-  <section id="storytelling" class="py-5 bg-dark text-light">
-    <div class="container">
-      <h2 class="text-center">Storytelling Campaign</h2>
-      <p class="text-center">Discover lessons and entertainment through our curated book reviews and storytelling videos.</p>
-      <div class="row g-4">
-        <div class="col-md-6">
-          <iframe width="100%" height="315" src="https://www.youtube.com/embed/samplevideo1" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="col-md-6">
-          <iframe width="100%" height="315" src="https://www.tiktok.com/embed/samplevideo2" title="TikTok video player" frameborder="0" allowfullscreen></iframe>
-        </div>
-      </div>
-    </div>
-
-
-    
-  </section>
-  <section id="services">
-    <div class="container">
-        <h1>Our Services</h1>
-        <div class="services-grid">
-            <div class="service-box">
-                <h4>Coming Soon</h4>
-                <p>Stay tuned for our amazing services, launching shortly!</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-  <!-- Contact Section -->
-  <section id="contact" class="py-5 bg-dark text-light">
-    <div class="container">
-      <h2 class="text-center">Contact Us</h2>
+      <h2 class="mb-4">Storytelling Campaign</h2>
+      <p>Discover lessons and entertainment through our curated book reviews and storytelling videos.</p>
       <div class="row">
         <div class="col-md-6">
-          <h4>Reach Out</h4>
-          <p><strong>Address:</strong> 123 Gothic Street, Midnight City</p>
-          <p><strong>Email:</strong> info@raboklibrary.com</p>
-          <p><strong>Phone:</strong> +123 456 7890</p>
+          <iframe width="100%" height="315" src="https://www.youtube.com/embed/samplevideo1" frameborder="0" allowfullscreen></iframe>
         </div>
         <div class="col-md-6">
-          <form>
-            <div class="mb-3">
-              <label for="name" class="form-label">Name</label>
-              <input type="text" class="form-control" id="name" required>
-            </div>
-            <div class="mb-3">
-              <label for="email" class="form-label">Email</label>
-              <input type="email" class="form-control" id="email" required>
-            </div>
-            <div class="mb-3">
-              <label for="message" class="form-label">Message</label>
-              <textarea id="message" rows="5" class="form-control" required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Send Message</button>
-          </form>
+          <iframe width="100%" height="315" src="https://www.tiktok.com/embed/samplevideo2" frameborder="0" allowfullscreen></iframe>
         </div>
       </div>
     </div>
   </section>
-
-  <!-- Footer -->
-  <footer class="bg-dark text-light py-3">
-    <div class="container text-center">
-      <p>&copy; 2025 Rabok Library. All Rights Reserved.</p>
-      <p>Follow us on: 
-        <a href="#" class="text-light">TikTok</a> | 
-        <a href="#" class="text-light">YouTube</a> | 
-        <a href="#" class="text-light">LinkedIn</a>
-      </p>
+  
+  <section id="services" class="py-5 bg-light text-center">
+    <div class="container">
+      <h2 class="mb-4">Our Services</h2>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3">
+          <div class="card shadow h-100">
+            <div class="card-body">
+              <h4 class="card-title">Digital Publications & Research Reports</h4>
+              <p class="card-text">In-depth research tailored for businesses and institutions.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3">
+          <div class="card shadow h-100">
+            <div class="card-body">
+              <h4 class="card-title">Consultation & Advisory Services</h4>
+              <p class="card-text">Expert guidance based on our research insights.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
+  
+  <section id="shop" class="py-5 bg-light text-center">
+    <div class="container">
+      <h2 class="mb-4">Buy Our Research Reports</h2>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="card shadow h-100">
+            <div class="card-body">
+              <h4 class="card-title">East Africa Market Trends 2024</h4>
+              <p class="card-text">Comprehensive market analysis and industry insights.</p>
+              <a href="#" class="btn btn-success">Buy Now - $25</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card shadow h-100">
+            <div class="card-body">
+              <h4 class="card-title">Government Policy Insights</h4>
+              <p class="card-text">An in-depth report on regulatory changes affecting industries.</p>
+              <a href="#" class="btn btn-success">Buy Now - $30</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <footer class="bg-dark text-light py-3 text-center">
+    <p>&copy; 2025 Rabok Library. All Rights Reserved.</p>
+    <p>Follow us on: <a href="#" class="text-light">TikTok</a> | <a href="#" class="text-light">YouTube</a> | <a href="#" class="text-light">LinkedIn</a></p>
   </footer>
-
-  <!-- Bootstrap JS -->
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
